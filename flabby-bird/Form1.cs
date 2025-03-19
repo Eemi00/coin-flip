@@ -20,6 +20,8 @@ namespace flabby_bird
 
         private async void startBtn_Click(object sender, EventArgs e)
         {
+            string selection = "";
+
             if (!headsBtn.Checked && !tailsBtn.Checked)
             {
                 errorLabel.Text = "Sinun täytyy valita joko kruuna tai klaava!";
@@ -34,19 +36,21 @@ namespace flabby_bird
                 if (headsBtn.Checked)
                 {
                     selectionLabel.Text = "Valitsit kruunan!";
+                    selection = "Kruuna";
                 }
                 else if (tailsBtn.Checked)
                 {
                     selectionLabel.Text = "Valitsit klaavan!";
+                    selection = "Klaava";
                 }
 
-                await RandomizeResultAsync();
+                await RandomizeResultAsync(selection);
             }
         }
 
-        private async Task RandomizeResultAsync()
+        private async Task RandomizeResultAsync(string selection)
         {
-            await Task.Delay(2400);
+            await Task.Delay(2600);
 
             Random random = new Random();
 
@@ -58,6 +62,31 @@ namespace flabby_bird
             string result = (randomChoice == 0) ? option1 : option2;
 
             resultLabel.Text = result;
+
+            if (result == selection)
+            {
+                winLabel.Text = "Voitit! Olet voittanut!"; 
+            }
+            else
+            {
+                winLabel.Text = "hävisit! Yritä uudelleen!";
+            }
+        }
+
+        private void playagainBtn_Click(object sender, EventArgs e)
+        {
+            betPanel.Visible = true;
+            playPanel.Visible = false;
+
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
+            errorLabel.Text = "";
+            winLabel.Text = "";
+
+            headsBtn.Checked = false;
+            tailsBtn.Checked = false;
+
+            pictureBox1.Image = Properties.Resources.download;
         }
     }
 }

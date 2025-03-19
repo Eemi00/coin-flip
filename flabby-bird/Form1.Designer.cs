@@ -40,6 +40,7 @@
             this.playagainBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.resultLabel = new System.Windows.Forms.Label();
+            this.winLabel = new System.Windows.Forms.Label();
             this.betPanel.SuspendLayout();
             this.playPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -126,6 +127,7 @@
             this.playPanel.Controls.Add(this.playagainBtn);
             this.playPanel.Controls.Add(this.selectionLabel);
             this.playPanel.Controls.Add(this.resultLabel);
+            this.playPanel.Controls.Add(this.winLabel);
             this.playPanel.Controls.Add(this.pictureBox1);
             this.playPanel.Location = new System.Drawing.Point(0, 0);
             this.playPanel.Name = "playPanel";
@@ -146,12 +148,13 @@
             // playagainBtn
             // 
             this.playagainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playagainBtn.Location = new System.Drawing.Point(620, 722);
+            this.playagainBtn.Location = new System.Drawing.Point(620, 744);
             this.playagainBtn.Name = "playagainBtn";
             this.playagainBtn.Size = new System.Drawing.Size(212, 35);
             this.playagainBtn.TabIndex = 1;
             this.playagainBtn.Text = "Pelaa Uudestaan";
             this.playagainBtn.UseVisualStyleBackColor = true;
+            this.playagainBtn.Click += new System.EventHandler(this.playagainBtn_Click);
             // 
             // pictureBox1
             // 
@@ -167,10 +170,20 @@
             this.resultLabel.AutoSize = true;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultLabel.ForeColor = System.Drawing.Color.White;
-            this.resultLabel.Location = new System.Drawing.Point(661, 642);
+            this.resultLabel.Location = new System.Drawing.Point(666, 641);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(0, 29);
             this.resultLabel.TabIndex = 3;
+            // 
+            // winLabel
+            // 
+            this.winLabel.AutoSize = true;
+            this.winLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.winLabel.ForeColor = System.Drawing.Color.White;
+            this.winLabel.Location = new System.Drawing.Point(592, 686);
+            this.winLabel.Name = "winLabel";
+            this.winLabel.Size = new System.Drawing.Size(0, 29);
+            this.winLabel.TabIndex = 4;
             // 
             // Form1
             // 
@@ -204,6 +217,7 @@
         private System.Windows.Forms.Label selectionLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label resultLabel;
+        private System.Windows.Forms.Label winLabel;
     }
 }
 
