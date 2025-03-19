@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("flabby-bird")]
+[assembly: AssemblyTitle("coin_flip")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("OSAO")]
-[assembly: AssemblyProduct("flabby-bird")]
+[assembly: AssemblyProduct("coin_flip")]
 [assembly: AssemblyCopyright("Copyright © OSAO 2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

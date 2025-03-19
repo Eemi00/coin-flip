@@ -5,17 +5,24 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace flabby_bird
+namespace coin_flip
 {
     public partial class Form1 : Form
     {
+        private Timer changeImageTimer;
+
         public Form1()
         {
             InitializeComponent();
+
+            changeImageTimer = new Timer();
+            changeImageTimer.Interval = 2500;
+            changeImageTimer.Tick += ChangeImageTimer_Tick;
         }
 
         private async void startBtn_Click(object sender, EventArgs e)
@@ -50,8 +57,11 @@ namespace flabby_bird
 
         private async Task RandomizeResultAsync(string selection)
         {
-            await Task.Delay(2600);
+            pictureBox1.Image = Properties.Resources.download;
 
+            changeImageTimer.Start();
+
+            await Task.Delay(2600); 
             Random random = new Random();
 
             string option1 = "Kruuna";
@@ -65,12 +75,19 @@ namespace flabby_bird
 
             if (result == selection)
             {
-                winLabel.Text = "Voitit! Olet voittanut!"; 
+                winLabel.Text = "Voitit! Olet voittanut!";
             }
             else
             {
                 winLabel.Text = "hävisit! Yritä uudelleen!";
             }
+        }
+
+        private void ChangeImageTimer_Tick(object sender, EventArgs e)
+        {
+            changeImageTimer.Stop();
+
+            pictureBox1.Image = Properties.Resources.staticImg;
         }
 
         private void playagainBtn_Click(object sender, EventArgs e)
@@ -86,7 +103,7 @@ namespace flabby_bird
             headsBtn.Checked = false;
             tailsBtn.Checked = false;
 
-            pictureBox1.Image = Properties.Resources.download;
+            pictureBox1.Image = Properties.Resources.staticImg;
         }
     }
 }

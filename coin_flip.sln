@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35728.132 d17.12
+VisualStudioVersion = 17.12.35728.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "flabby-bird", "flabby-bird\flabby-bird.csproj", "{AD195255-B2E4-4E5F-80EB-E8845B0D4C0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "coin_flip", "coin_flip\coin_flip.csproj", "{AD195255-B2E4-4E5F-80EB-E8845B0D4C0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

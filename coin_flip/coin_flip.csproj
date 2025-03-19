@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{AD195255-B2E4-4E5F-80EB-E8845B0D4C0F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>flabby_bird</RootNamespace>
-    <AssemblyName>flabby-bird</AssemblyName>
+    <RootNamespace>coin_flip</RootNamespace>
+    <AssemblyName>coin_flip</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

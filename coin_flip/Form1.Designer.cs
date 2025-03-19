@@ -1,4 +1,4 @@
-﻿namespace flabby_bird
+﻿namespace coin_flip
 {
     partial class Form1
     {
@@ -180,7 +180,7 @@
             this.winLabel.AutoSize = true;
             this.winLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLabel.ForeColor = System.Drawing.Color.White;
-            this.winLabel.Location = new System.Drawing.Point(592, 686);
+            this.winLabel.Location = new System.Drawing.Point(586, 686);
             this.winLabel.Name = "winLabel";
             this.winLabel.Size = new System.Drawing.Size(0, 29);
             this.winLabel.TabIndex = 4;

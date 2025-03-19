@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace flabby_bird
+namespace coin_flip
 {
     internal static class Program
     {
