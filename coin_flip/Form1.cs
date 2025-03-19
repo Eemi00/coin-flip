@@ -21,7 +21,7 @@ namespace coin_flip
             InitializeComponent();
 
             changeImageTimer = new Timer();
-            changeImageTimer.Interval = 2500;
+            changeImageTimer.Interval = 2600;
             changeImageTimer.Tick += ChangeImageTimer_Tick;
         }
 
@@ -57,7 +57,7 @@ namespace coin_flip
 
         private async Task RandomizeResultAsync(string selection)
         {
-            pictureBox1.Image = Properties.Resources.download;
+            pictureBox1.Image = Properties.Resources.download;  
 
             changeImageTimer.Start();
 
@@ -87,7 +87,7 @@ namespace coin_flip
         {
             changeImageTimer.Stop();
 
-            pictureBox1.Image = Properties.Resources.staticImg;
+            pictureBox1.Image = Properties.Resources.staticImage;
         }
 
         private void playagainBtn_Click(object sender, EventArgs e)
@@ -102,8 +102,6 @@ namespace coin_flip
 
             headsBtn.Checked = false;
             tailsBtn.Checked = false;
-
-            pictureBox1.Image = Properties.Resources.staticImg;
         }
     }
 }

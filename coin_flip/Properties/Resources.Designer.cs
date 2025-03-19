@@ -73,9 +73,9 @@ namespace coin_flip.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap staticImg {
+        internal static System.Drawing.Bitmap staticImage {
             get {
-                object obj = ResourceManager.GetObject("staticImg", resourceCulture);
+                object obj = ResourceManager.GetObject("staticImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

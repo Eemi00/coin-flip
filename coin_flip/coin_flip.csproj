@@ -86,9 +86,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\staticImg.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\staticImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
