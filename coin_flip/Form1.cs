@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -16,6 +17,9 @@ namespace coin_flip
     {
         private Timer changeImageTimer;
 
+        private int balance = 0;
+        private Random BalanceRandom = new Random();
+
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +27,9 @@ namespace coin_flip
             changeImageTimer = new Timer();
             changeImageTimer.Interval = 2600;
             changeImageTimer.Tick += ChangeImageTimer_Tick;
+
+            pictureBoxDiamond.Click += Diamond_Click;
+            SpawnDiamond();
         }
 
         private async void startBtn_Click(object sender, EventArgs e)
@@ -102,6 +109,43 @@ namespace coin_flip
 
             headsBtn.Checked = false;
             tailsBtn.Checked = false;
+        }
+
+        private void Diamond_Click(object sender, EventArgs e)
+        {
+            balance += 1;
+            balanceLabel.Text = $"Lompakko: {balance} 💎";
+
+            SpawnDiamond();
+        }
+
+        private void SpawnDiamond()
+        {
+            int maxX = gamePanel.Width - pictureBoxDiamond.Width;
+            int maxY = gamePanel.Height - pictureBoxDiamond.Height;
+
+            int randomX = BalanceRandom.Next(0, maxX);
+            int randomY = BalanceRandom.Next(100, maxY);
+
+            pictureBoxDiamond.Location = new Point(randomX, randomY);
+        }
+
+        private void panelSwitchBtn_Click(object sender, EventArgs e)
+        {
+            gamePanel.Visible = false;
+            betPanel.Visible = true;
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            betPanel.Visible = false;
+            gamePanel.Visible = true;
+        }
+
+        private void backBtn2_Click(object sender, EventArgs e)
+        {
+            playPanel.Visible = false;
+            gamePanel.Visible = true;
         }
     }
 }
