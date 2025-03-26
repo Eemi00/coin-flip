@@ -92,13 +92,22 @@ namespace coin_flip
 
             resultLabel.Text = result;
 
+            int.TryParse(betAmount.Text, out int bet);
+
             if (result == selection)
             {
                 winLabel.Text = "Voitit! Olet voittanut!";
+
+                balance -= bet;
+                balance += bet * 2;
+                UpdateBalanceLabels();
             }
             else
             {
                 winLabel.Text = "hävisit! Yritä uudelleen!";
+
+                balance -= bet;
+                UpdateBalanceLabels();
             }
         }
 
@@ -120,6 +129,7 @@ namespace coin_flip
             resultLabel.Text = "";
             errorLabel.Text = "";
             winLabel.Text = "";
+            betAmount.Text = "";
 
             headsBtn.Checked = false;
             tailsBtn.Checked = false;
@@ -155,7 +165,11 @@ namespace coin_flip
             gamePanel.Visible = false;
             betPanel.Visible = true;
 
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
             errorLabel.Text = "";
+            winLabel.Text = "";
+            betAmount.Text = "";
 
             UpdateBalanceLabels();
         }
@@ -165,6 +179,12 @@ namespace coin_flip
             betPanel.Visible = false;
             gamePanel.Visible = true;
 
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
+            errorLabel.Text = "";
+            winLabel.Text = "";
+            betAmount.Text = "";
+
             UpdateBalanceLabels();
         }
 
@@ -172,6 +192,12 @@ namespace coin_flip
         {
             playPanel.Visible = false;
             gamePanel.Visible = true;
+
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
+            errorLabel.Text = "";
+            winLabel.Text = "";
+            betAmount.Text = "";
 
             UpdateBalanceLabels();
         }

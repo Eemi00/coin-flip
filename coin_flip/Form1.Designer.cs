@@ -79,7 +79,7 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errorLabel.Location = new System.Drawing.Point(408, 559);
+            this.errorLabel.Location = new System.Drawing.Point(440, 559);
             this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 20);
@@ -248,7 +248,7 @@
             // panelSwitchBtn
             // 
             this.panelSwitchBtn.AutoSize = true;
-            this.panelSwitchBtn.BackColor = System.Drawing.Color.White;
+            this.panelSwitchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panelSwitchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSwitchBtn.ForeColor = System.Drawing.Color.Black;
             this.panelSwitchBtn.Location = new System.Drawing.Point(477, 28);
@@ -325,8 +325,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1130, 689);
-            this.Controls.Add(this.betPanel);
             this.Controls.Add(this.gamePanel);
+            this.Controls.Add(this.betPanel);
             this.Controls.Add(this.playPanel);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
