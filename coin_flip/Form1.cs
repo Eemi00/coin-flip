@@ -36,6 +36,18 @@ namespace coin_flip
         {
             string selection = "";
 
+            if (!int.TryParse(betAmount.Text, out int bet) || bet < 1)
+            {
+                errorLabel.Text = "Aseta panos! Vähintään 1.";
+                return;
+            }
+
+            if (bet > balance)
+            {
+                errorLabel.Text = "Ei tarpeeksi timantteja! 💎";
+                return;
+            }
+
             if (!headsBtn.Checked && !tailsBtn.Checked)
             {
                 errorLabel.Text = "Sinun täytyy valita joko kruuna tai klaava!";
@@ -102,6 +114,8 @@ namespace coin_flip
             betPanel.Visible = true;
             playPanel.Visible = false;
 
+            UpdateBalanceLabels();
+
             selectionLabel.Text = "";
             resultLabel.Text = "";
             errorLabel.Text = "";
@@ -114,9 +128,15 @@ namespace coin_flip
         private void Diamond_Click(object sender, EventArgs e)
         {
             balance += 1;
-            balanceLabel.Text = $"Lompakko: {balance} 💎";
 
             SpawnDiamond();
+            UpdateBalanceLabels();
+        }
+
+        private void UpdateBalanceLabels()
+        {
+            balanceLabel.Text = $"Lompakko: {balance} 💎";
+            balanceLabel2.Text = $"Lompakko: {balance} 💎";
         }
 
         private void SpawnDiamond()
@@ -134,18 +154,26 @@ namespace coin_flip
         {
             gamePanel.Visible = false;
             betPanel.Visible = true;
+
+            errorLabel.Text = "";
+
+            UpdateBalanceLabels();
         }
 
         private void backBtn_Click(object sender, EventArgs e)
         {
             betPanel.Visible = false;
             gamePanel.Visible = true;
+
+            UpdateBalanceLabels();
         }
 
         private void backBtn2_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
             gamePanel.Visible = true;
+
+            UpdateBalanceLabels();
         }
     }
 }

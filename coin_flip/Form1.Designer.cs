@@ -47,6 +47,9 @@
             this.panelSwitchBtn = new System.Windows.Forms.Label();
             this.backBtn = new System.Windows.Forms.Button();
             this.backBtn2 = new System.Windows.Forms.Button();
+            this.balanceLabel2 = new System.Windows.Forms.Label();
+            this.betAmount = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.betPanel.SuspendLayout();
             this.playPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -56,6 +59,9 @@
             // 
             // betPanel
             // 
+            this.betPanel.Controls.Add(this.label2);
+            this.betPanel.Controls.Add(this.betAmount);
+            this.betPanel.Controls.Add(this.balanceLabel2);
             this.betPanel.Controls.Add(this.backBtn);
             this.betPanel.Controls.Add(this.errorLabel);
             this.betPanel.Controls.Add(this.tailsBtn);
@@ -73,7 +79,7 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errorLabel.Location = new System.Drawing.Point(409, 453);
+            this.errorLabel.Location = new System.Drawing.Point(408, 559);
             this.errorLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 20);
@@ -115,7 +121,7 @@
             this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.Color.White;
-            this.startBtn.Location = new System.Drawing.Point(511, 400);
+            this.startBtn.Location = new System.Drawing.Point(511, 446);
             this.startBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(95, 32);
@@ -281,15 +287,47 @@
             this.backBtn2.UseVisualStyleBackColor = true;
             this.backBtn2.Click += new System.EventHandler(this.backBtn2_Click);
             // 
+            // balanceLabel2
+            // 
+            this.balanceLabel2.AutoSize = true;
+            this.balanceLabel2.BackColor = System.Drawing.Color.White;
+            this.balanceLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.balanceLabel2.ForeColor = System.Drawing.Color.Black;
+            this.balanceLabel2.Location = new System.Drawing.Point(21, 21);
+            this.balanceLabel2.Name = "balanceLabel2";
+            this.balanceLabel2.Size = new System.Drawing.Size(156, 24);
+            this.balanceLabel2.TabIndex = 10;
+            this.balanceLabel2.Text = "Lompakko: 0 💎";
+            // 
+            // betAmount
+            // 
+            this.betAmount.Location = new System.Drawing.Point(511, 372);
+            this.betAmount.Name = "betAmount";
+            this.betAmount.Size = new System.Drawing.Size(95, 20);
+            this.betAmount.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("UniSansBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(460, 340);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 29);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Timanttien määrä";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1130, 689);
+            this.Controls.Add(this.betPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.playPanel);
-            this.Controls.Add(this.betPanel);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -325,6 +363,9 @@
         private System.Windows.Forms.Label panelSwitchBtn;
         private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Button backBtn2;
+        private System.Windows.Forms.Label balanceLabel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox betAmount;
     }
 }
 
