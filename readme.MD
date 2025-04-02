@@ -6,6 +6,16 @@
 - Kun kolikko on heitetty odotat että se arpoo kruunan tai klaavan. Jos valitsit oikein saat vedonlyönnin määrän tuplana takaisin. Jos häviät, menetät lyömäsi timantit.
 
 - Voit milloin vain palata takaisin keräämään timantteja
+  
+- Pelissä tulee tapahtumia joka 10-15 minuutin välein.
+
+- Voit ostaa päivityksiä timanteilla, jotka helpottaa timanttien saamista
+
+### Tapahtumat
+---
+**Pommi Tapahtuma**
+- Pommi tapahtumassa näytölle ilmestyy pommeja. Varo niiden painamista sillä sinulta lähtee timantteja.
+---
 
 ### Lataus
 - Paina "Releases" napista sivun oikeassa laidassa. Sieltä löytyy .exe tiedosto peliin.
