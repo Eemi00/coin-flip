@@ -11,6 +11,11 @@
 
 - Voit ostaa päivityksiä timanteilla, jotka helpottaa timanttien saamista
 
+### Tarkoitus
+Pelin tarkoitus on mielenkiintoinen simulaattoripeli johon pelaaja voi helposti jäädä koukkuun! Pelissä on päivityksiä joihin täytyy kerätä timantteja.
+
+Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenkiinnon yllä!
+
 ### Tapahtumat
 ---
 **Pommi Tapahtuma**
@@ -18,7 +23,11 @@
 ---
 
 ### Lataus
-- Paina "Releases" napista sivun oikeassa laidassa. Sieltä löytyy .exe tiedosto peliin.
+- Paina "Releases" napista sivun oikeassa laidassa. Sieltä löytyy .exe tiedosto peliin. 
+- **Muista purkaa pelin kansio jotta lompakko säilyy**
+
+### Vuokaavio
+c:\Users\s4ilee00\OneDrive - OSAO\Kuvat\Näyttökuvat\Näyttökuva 2025-04-02 130211.png
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.
