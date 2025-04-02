@@ -246,7 +246,7 @@
             // backBtn2
             // 
             this.backBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn2.Location = new System.Drawing.Point(620, 800);
+            this.backBtn2.Location = new System.Drawing.Point(619, 761);
             this.backBtn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn2.Name = "backBtn2";
             this.backBtn2.Size = new System.Drawing.Size(212, 34);
@@ -258,7 +258,7 @@
             // playagainBtn
             // 
             this.playagainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playagainBtn.Location = new System.Drawing.Point(620, 743);
+            this.playagainBtn.Location = new System.Drawing.Point(619, 704);
             this.playagainBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.playagainBtn.Name = "playagainBtn";
             this.playagainBtn.Size = new System.Drawing.Size(212, 34);
@@ -354,6 +354,7 @@
             // 
             // shopPanel
             // 
+            this.shopPanel.AutoScroll = true;
             this.shopPanel.Controls.Add(this.groupBox2);
             this.shopPanel.Controls.Add(this.groupBox3);
             this.shopPanel.Controls.Add(this.groupBox1);
@@ -547,7 +548,7 @@
             this.backBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.backBtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn3.ForeColor = System.Drawing.Color.White;
-            this.backBtn3.Location = new System.Drawing.Point(681, 34);
+            this.backBtn3.Location = new System.Drawing.Point(672, 29);
             this.backBtn3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn3.Name = "backBtn3";
             this.backBtn3.Size = new System.Drawing.Size(127, 39);
@@ -670,9 +671,12 @@
             this.Controls.Add(this.shopPanel);
             this.Controls.Add(this.betPanel);
             this.Controls.Add(this.playPanel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Timanttipeli";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.betPanel.ResumeLayout(false);
             this.betPanel.PerformLayout();

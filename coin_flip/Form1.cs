@@ -19,7 +19,7 @@ namespace coin_flip
         // Kaikki timerit ja muuttujat
         private Timer changeImageTimer;
 
-        private int balance = 3000;
+        private int balance = 0;
         private Random BalanceRandom = new Random();
 
         private int diamondMultiplier = 1;
@@ -90,7 +90,7 @@ namespace coin_flip
             MessageBox.Show("Eventti alkoi! Varo painamasta pommeja!");
             specialEventActive = true;
 
-            moveBomb();
+            MoveBomb();
             eventDurationTimer.Start();
         }
 
@@ -148,6 +148,9 @@ namespace coin_flip
                     selection = "Klaava";
                 }
 
+                playagainBtn.Enabled = false;
+                backBtn2.Enabled = false;
+
                 await RandomizeResultAsync(selection);
             }
         }
@@ -192,7 +195,7 @@ namespace coin_flip
         }
 
         // Pommi eventin pommi kuvan liikuttaminen aina kun timanttia painaa.
-        private void moveBomb()
+        private void MoveBomb()
         {
             if (!specialEventActive) return;
 
@@ -225,6 +228,9 @@ namespace coin_flip
             changeImageTimer.Stop();
 
             pictureBox1.Image = Properties.Resources.staticImage;
+
+            playagainBtn.Enabled = true;
+            backBtn2.Enabled = true;
         }
 
         // Kolikonheiton uudelleen pelaukseen tehdyt säännöt
@@ -255,7 +261,7 @@ namespace coin_flip
 
             if (specialEventActive)
             {
-                moveBomb();
+                MoveBomb();
             }
         }
 
@@ -497,8 +503,57 @@ namespace coin_flip
         // funktiot jotka tapahtuu ku pelin aukasee
         private void Form1_Load(object sender, EventArgs e)
         {
+            LoadBalanceFromFile();
             UpdateBalanceLabels();
             InitializeEventTimer();
+        }
+
+        // tallentaa lompakon kun peli laitetaan kiinni
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveBalanceToFile();
+        }
+
+        // funktio lompakon lataamisessa
+        private void LoadBalanceFromFile()
+        {
+            string filePath = Path.Combine(Application.StartupPath, "lompakko.txt");
+
+            // Funktio tarkistaa onko tiedostoa olemassa
+            if (File.Exists(filePath))
+            {
+                try
+                {
+                    // Lukee lompakon tiedostosta
+                    string balanceText = File.ReadAllText(filePath);
+                    int.TryParse(balanceText, out balance);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Errori tiedoston lukemisessa: {ex.Message}");
+                }
+            }
+            else
+            {
+                // Jos tiedostoa ei oo se ottaa perusarvon lompakolle
+                balance = 0;
+            }
+        }
+
+        // funktio lompakon tallentamiseen
+        private void SaveBalanceToFile()
+        {
+            string filePath = Path.Combine(Application.StartupPath, "lompakko.txt");
+
+            try
+            {
+                // Tallentaa tiedostoon lompakon
+                File.WriteAllText(filePath, balance.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Errori tiedostoon tallentamisessa: {ex.Message}");
+            }
         }
     }
 }
