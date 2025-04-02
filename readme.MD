@@ -11,6 +11,10 @@
 
 - Voit ostaa päivityksiä timanteilla, jotka helpottaa timanttien saamista
 
+### Pelin kulku
+Voit aloittaa pelin keräämällä timantteja pääpaneelilla.
+
+
 ### Tarkoitus
 Pelin tarkoitus on mielenkiintoinen simulaattoripeli johon pelaaja voi helposti jäädä koukkuun! Pelissä on päivityksiä joihin täytyy kerätä timantteja.
 
@@ -27,7 +31,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 - **Muista purkaa pelin kansio jotta lompakko säilyy**
 
 ### Vuokaavio
-![Vuokaavio](https://github.com/Eemi00/coin-flip/blob//image.jpg?raw=true)
+![Vuokaavio](https://github.com/Eemi00/coin-flip/blob/6c267443098a6d8f31423ec1b7b190d79eb8879d/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20130211.png?raw=true)
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.

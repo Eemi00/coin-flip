@@ -282,7 +282,7 @@
             this.resultLabel.AutoSize = true;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultLabel.ForeColor = System.Drawing.Color.White;
-            this.resultLabel.Location = new System.Drawing.Point(667, 641);
+            this.resultLabel.Location = new System.Drawing.Point(636, 592);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(0, 29);
             this.resultLabel.TabIndex = 3;
@@ -292,7 +292,7 @@
             this.winLabel.AutoSize = true;
             this.winLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLabel.ForeColor = System.Drawing.Color.White;
-            this.winLabel.Location = new System.Drawing.Point(587, 686);
+            this.winLabel.Location = new System.Drawing.Point(578, 647);
             this.winLabel.Name = "winLabel";
             this.winLabel.Size = new System.Drawing.Size(0, 29);
             this.winLabel.TabIndex = 4;
@@ -654,7 +654,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(419, 66);
+            this.pictureBox1.Location = new System.Drawing.Point(416, 26);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(687, 556);
@@ -667,10 +667,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1504, 811);
+            this.Controls.Add(this.playPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.shopPanel);
             this.Controls.Add(this.betPanel);
-            this.Controls.Add(this.playPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
