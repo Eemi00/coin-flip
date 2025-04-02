@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +21,10 @@ namespace coin_flip
         private int balance = 0;
         private Random BalanceRandom = new Random();
 
+        private int diamondMultiplier = 1;
+        private bool autoClickerEnabled = false;
+        private bool goldenDiamondUpgradePurchased = false;
+
         public Form1()
         {
             InitializeComponent();
@@ -30,6 +35,31 @@ namespace coin_flip
 
             pictureBoxDiamond.Click += Diamond_Click;
             SpawnDiamond();
+
+            timerAutoClicker.Interval = 60000;
+            timerAutoClicker.Tick += timerAutoClicker_Tick;
+
+            timerGoldenDiamond.Interval = 300000; 
+            timerGoldenDiamond.Tick += timerGoldenDiamond_Tick;
+        }
+
+        private void timerGoldenDiamond_Tick(object sender, EventArgs e)
+        {
+            if (goldenDiamondUpgradePurchased)
+            {
+                Random rand = new Random();
+                int x = rand.Next(50, gamePanel.Width - 100);
+                int y = rand.Next(50, gamePanel.Height - 100);
+
+                goldenDiamond.Location = new Point(x, y);
+                goldenDiamond.Visible = true;
+            }
+        }
+
+        private void timerAutoClicker_Tick(object sender, EventArgs e)
+        {
+            balance += 100;
+            UpdateBalanceLabels();
         }
 
         private async void startBtn_Click(object sender, EventArgs e)
@@ -76,11 +106,11 @@ namespace coin_flip
 
         private async Task RandomizeResultAsync(string selection)
         {
-            pictureBox1.Image = Properties.Resources.download;  
+            pictureBox1.Image = Properties.Resources.download;
 
             changeImageTimer.Start();
 
-            await Task.Delay(2600); 
+            await Task.Delay(2600);
             Random random = new Random();
 
             string option1 = "Kruuna";
@@ -137,7 +167,7 @@ namespace coin_flip
 
         private void Diamond_Click(object sender, EventArgs e)
         {
-            balance += 1;
+            balance += 1 * diamondMultiplier;
 
             SpawnDiamond();
             UpdateBalanceLabels();
@@ -147,6 +177,7 @@ namespace coin_flip
         {
             balanceLabel.Text = $"Lompakko: {balance} 💎";
             balanceLabel2.Text = $"Lompakko: {balance} 💎";
+            balanceLabel3.Text = $"Lompakko: {balance} 💎";
         }
 
         private void SpawnDiamond()
@@ -162,8 +193,13 @@ namespace coin_flip
 
         private void panelSwitchBtn_Click(object sender, EventArgs e)
         {
+            playPanel.Visible = false;
+            shopPanel.Visible = false;
             gamePanel.Visible = false;
             betPanel.Visible = true;
+
+            timerAutoClicker.Stop();
+            timerGoldenDiamond.Stop();
 
             selectionLabel.Text = "";
             resultLabel.Text = "";
@@ -176,8 +212,16 @@ namespace coin_flip
 
         private void backBtn_Click(object sender, EventArgs e)
         {
+            playPanel.Visible = false;
+            shopPanel.Visible = false;
             betPanel.Visible = false;
             gamePanel.Visible = true;
+
+            if (autoClickerEnabled)
+            {
+                timerAutoClicker.Start();
+            }
+            timerGoldenDiamond.Start();
 
             selectionLabel.Text = "";
             resultLabel.Text = "";
@@ -191,7 +235,15 @@ namespace coin_flip
         private void backBtn2_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
+            shopPanel.Visible = false;
+            betPanel.Visible = false;
             gamePanel.Visible = true;
+
+            if (autoClickerEnabled)
+            {
+                timerAutoClicker.Start();
+            }
+            timerGoldenDiamond.Start();
 
             selectionLabel.Text = "";
             resultLabel.Text = "";
@@ -199,6 +251,111 @@ namespace coin_flip
             winLabel.Text = "";
             betAmount.Text = "";
 
+            UpdateBalanceLabels();
+        }
+
+        private void backBtn3_Click(object sender, EventArgs e)
+        {
+            playPanel.Visible = false;
+            shopPanel.Visible = false;
+            betPanel.Visible = false;
+            gamePanel.Visible = true;
+
+            if (autoClickerEnabled)
+            {
+                timerAutoClicker.Start();
+            }
+            timerGoldenDiamond.Start();
+
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
+            errorLabel.Text = "";
+            winLabel.Text = "";
+            betAmount.Text = "";
+
+            UpdateBalanceLabels();
+        }
+
+        private void btnBuyUpgrade1_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = 100;
+
+            if (balance >= upgradeCost)
+            {
+                balance -= upgradeCost;
+                diamondMultiplier = 2;
+                UpdateBalanceLabels();
+                MessageBox.Show("Päivitys Ostettu!");
+            }
+            else
+            {
+                MessageBox.Show("Ei tarpeeksi timantteja!");
+            }
+        }
+
+        private void btnBuyUpgrade2_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = 150;
+
+            if (balance >= upgradeCost)
+            {
+                balance -= upgradeCost;
+                autoClickerEnabled = true;
+                timerAutoClicker.Start();
+                UpdateBalanceLabels();
+                MessageBox.Show("Päivitys Ostettu!");
+            }
+            else
+            {
+                MessageBox.Show("Ei tarpeeksi timantteja!");
+            }
+        }
+
+        private void btnBuyUpgrade3_Click(object sender, EventArgs e)
+        {
+            int upgradeCost = 500;
+
+            if (balance >= upgradeCost)
+            {
+                balance -= upgradeCost;
+                goldenDiamondUpgradePurchased = true;
+                UpdateBalanceLabels();
+                MessageBox.Show("Päivitys Ostettu!");
+            }
+            else
+            {
+                MessageBox.Show("Ei tarpeeksi timantteja!");
+            }
+        }
+
+        private void goldenDiamond_Click(object sender, EventArgs e)
+        {
+            int goldenDiamondValue = 20 * diamondMultiplier;
+
+            balance += goldenDiamondValue;
+            UpdateBalanceLabels();
+
+            goldenDiamond.Visible = false;
+        }
+
+        private void shopBtn_Click(object sender, EventArgs e)
+        {
+            betPanel.Visible = false;
+            shopPanel.Visible = true;
+            playPanel.Visible = false;
+            gamePanel.Visible = false;
+
+            selectionLabel.Text = "";
+            resultLabel.Text = "";
+            errorLabel.Text = "";
+            winLabel.Text = "";
+            betAmount.Text = "";
+
+            UpdateBalanceLabels();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
             UpdateBalanceLabels();
         }
     }
