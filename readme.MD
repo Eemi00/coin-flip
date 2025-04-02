@@ -27,7 +27,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 - **Muista purkaa pelin kansio jotta lompakko säilyy**
 
 ### Vuokaavio
-c:\Users\s4ilee00\OneDrive - OSAO\Kuvat\Näyttökuvat\Näyttökuva 2025-04-02 130211.png
+![Vuokaavio](c:\Users\s4ilee00\OneDrive - OSAO\Kuvat\Näyttökuvat\Näyttökuva 2025-04-02 130211.png)
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.
