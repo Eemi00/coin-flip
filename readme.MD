@@ -49,4 +49,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.
+---
 - Pelissä on hienoja ominaisuuksia ja funktioita joista merkittävimpiä koodin pätkiä ovat tietynlaiset tapahtumat. Joka 10-15 minuutin välein tulee pommi tapahtuma jossa näytölle tulee pommeja.
+
+![Koodin pätkä](https://github.com/Eemi00/coin-flip/blob/2f2e3e1d4c417b58317d91428e8541b0b943f7da/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20132430.png?raw=true)
