@@ -12,9 +12,23 @@
 - Voit ostaa päivityksiä timanteilla, jotka helpottaa timanttien saamista
 
 ### Pelin kulku
-Voit aloittaa pelin keräämällä timantteja pääpaneelilla.
+- Voit aloittaa pelin keräämällä timantteja pääpaneelilla.
 
+![Aloitusnäyttö](https://github.com/Eemi00/coin-flip/blob/03dadfcecd8ffcc4b7792b86c074f5287f63cfdc/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20131200.png?raw=true)
+---
+- Kun olet keränny tarpeeksi timantteja voit menää kauppaan ostamaan päivityksiä
 
+![Kauppa](https://github.com/Eemi00/coin-flip/blob/03dadfcecd8ffcc4b7792b86c074f5287f63cfdc/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20131217.png?raw=true)
+---
+- Tai vaikka mennä pelaamaan kolikonheittoa!
+  
+![Kolikonheitto](https://github.com/Eemi00/coin-flip/blob/03dadfcecd8ffcc4b7792b86c074f5287f63cfdc/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20131209.png?raw=true)
+---
+- Saat vedonlyömäsi timantit kaksinkertaisena takaisin jos voitat.
+- Jos häviät menetät lyömäsi timantit!
+
+![Peli](https://github.com/Eemi00/coin-flip/blob/03dadfcecd8ffcc4b7792b86c074f5287f63cfdc/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20131424.png?raw=true)
+---
 ### Tarkoitus
 Pelin tarkoitus on mielenkiintoinen simulaattoripeli johon pelaaja voi helposti jäädä koukkuun! Pelissä on päivityksiä joihin täytyy kerätä timantteja.
 
@@ -35,3 +49,4 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.
+- Pelissä on hienoja ominaisuuksia ja funktioita joista merkittävimpiä koodin pätkiä ovat tietynlaiset tapahtumat. Joka 10-15 minuutin välein tulee pommi tapahtuma jossa näytölle tulee pommeja.
