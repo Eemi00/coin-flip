@@ -667,10 +667,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1504, 811);
-            this.Controls.Add(this.playPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.shopPanel);
             this.Controls.Add(this.betPanel);
+            this.Controls.Add(this.playPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

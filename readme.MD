@@ -53,3 +53,6 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 - Pelissä on hienoja ominaisuuksia ja funktioita joista merkittävimpiä koodin pätkiä ovat tietynlaiset tapahtumat. Joka 10-15 minuutin välein tulee pommi tapahtuma jossa näytölle tulee pommeja.
 
 ![Koodin pätkä](https://github.com/Eemi00/coin-flip/blob/2f2e3e1d4c417b58317d91428e8541b0b943f7da/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20132430.png?raw=true)
+
+### Tulevaisuus
+- Pelin tulevaisuudessa siihen voi lisätä lisää upgradeja jotka auttaa peliä. Myös eksoottisia keräily tavaroita voi kerätä kuten erinlaisia ja arvoisia timantteja!
