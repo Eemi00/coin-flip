@@ -27,7 +27,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 - **Muista purkaa pelin kansio jotta lompakko säilyy**
 
 ### Vuokaavio
-![Vuokaavio](https://osekk-my.sharepoint.com/:i:/g/personal/s4ilee00_students_osao_fi/EUiXeY8WqPlNsCTffPey6FoBymuYDWcwf791G_1LFXcUDw?e=xj974S)
+![Vuokaavio](https://github.com/Eemi00/coin-flip/blob//image.jpg?raw=true)
 
 ### Pelin teknologiat
 - Peli on kehitetty c# ja Windows Forms framworkillä Visual Studiossa.
