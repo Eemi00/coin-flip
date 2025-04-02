@@ -16,15 +16,28 @@ namespace coin_flip
 {
     public partial class Form1 : Form
     {
+        // Kaikki timerit ja muuttujat
         private Timer changeImageTimer;
 
-        private int balance = 0;
+        private int balance = 3000;
         private Random BalanceRandom = new Random();
 
         private int diamondMultiplier = 1;
         private bool autoClickerEnabled = false;
         private bool goldenDiamondUpgradePurchased = false;
 
+        private Timer specialEventTimer;
+        private Timer eventDurationTimer;
+        private Random eventRandom = new Random();
+        private bool specialEventActive = false;
+
+        // määrittää onko päivityksiä ostettu
+        private bool upgrade1Purchased = false;
+        private bool upgrade2Purchased = false;
+        private bool upgrade3Purchased = false;
+
+
+        // Perus form. Timerit
         public Form1()
         {
             InitializeComponent();
@@ -43,35 +56,70 @@ namespace coin_flip
             timerGoldenDiamond.Tick += timerGoldenDiamond_Tick;
         }
 
-        private void timerGoldenDiamond_Tick(object sender, EventArgs e)
+        // Custom eventin tunnistus / arpominen
+        private void InitializeEventTimer()
         {
-            if (goldenDiamondUpgradePurchased)
-            {
-                Random rand = new Random();
-                int x = rand.Next(50, gamePanel.Width - 100);
-                int y = rand.Next(50, gamePanel.Height - 100);
+            specialEventTimer = new Timer();
+            specialEventTimer.Interval = eventRandom.Next(600000, 900000);
+            specialEventTimer.Tick += SpecialEventTimer_Tick;
+            specialEventTimer.Start();
 
-                goldenDiamond.Location = new Point(x, y);
-                goldenDiamond.Visible = true;
-            }
+            eventDurationTimer = new Timer();
+            eventDurationTimer.Interval = 60000;
+            eventDurationTimer.Tick += EventDurationTimer_Tick;
         }
 
-        private void timerAutoClicker_Tick(object sender, EventArgs e)
+        // Lopettaa kustom eventin
+        private void EventDurationTimer_Tick(object sender, EventArgs e)
         {
-            balance += 100;
-            UpdateBalanceLabels();
+            EndSpecialEvent();
         }
 
+        // Ku eventti käynnistyy se sulkee timerin siks aikaa kun se eventti on käynnis
+        private void SpecialEventTimer_Tick(object sender, EventArgs e)
+        {
+            if (specialEventActive) return;
+
+            specialEventTimer.Stop(); 
+            TriggerSpecialEvent();
+        }
+
+        // Asiat mitä se tekee kun eventti alkaa
+        private void TriggerSpecialEvent()
+        {
+            MessageBox.Show("Eventti alkoi! Varo painamasta pommeja!");
+            specialEventActive = true;
+
+            moveBomb();
+            eventDurationTimer.Start();
+        }
+
+        // asiat mitä se tekee ku eventti loppuu
+        private void EndSpecialEvent()
+        {
+            specialEventActive = false;
+            MessageBox.Show("Eventti päättyi. Kannattaa odottaa seuraavaan!");
+            
+            bombEventPicture.Visible = false;
+            eventDurationTimer.Stop(); 
+
+            specialEventTimer.Interval = eventRandom.Next(600000, 900000);
+            specialEventTimer.Start();
+        }
+
+        // Kolikonheiton alotukseen sääntöjä
         private async void startBtn_Click(object sender, EventArgs e)
         {
             string selection = "";
 
+            // panos täytyy olla jotta voi pelata
             if (!int.TryParse(betAmount.Text, out int bet) || bet < 1)
             {
                 errorLabel.Text = "Aseta panos! Vähintään 1.";
                 return;
             }
 
+            // lisää sääntöjä
             if (bet > balance)
             {
                 errorLabel.Text = "Ei tarpeeksi timantteja! 💎";
@@ -104,6 +152,7 @@ namespace coin_flip
             }
         }
 
+        // arpoo kumpi tulee kruuna vai klaava
         private async Task RandomizeResultAsync(string selection)
         {
             pictureBox1.Image = Properties.Resources.download;
@@ -124,6 +173,7 @@ namespace coin_flip
 
             int.TryParse(betAmount.Text, out int bet);
 
+            // Tuloksien määrittely
             if (result == selection)
             {
                 winLabel.Text = "Voitit! Olet voittanut!";
@@ -141,6 +191,35 @@ namespace coin_flip
             }
         }
 
+        // Pommi eventin pommi kuvan liikuttaminen aina kun timanttia painaa.
+        private void moveBomb()
+        {
+            if (!specialEventActive) return;
+
+            Random rand = new Random();
+            int x = rand.Next(50, gamePanel.Width - bombEventPicture.Width);
+            int y = rand.Next(50, gamePanel.Height - bombEventPicture.Height);
+
+            bombEventPicture.Location = new Point(x, y);
+            bombEventPicture.Visible = true;
+        }
+
+        // Asiat mitä tapahtuu ku klikkaa pommia
+        private void bombEventPicture_Click(object sender, EventArgs e)
+        {
+            if (balance >= 20)
+            {
+                balance -= 20;
+            }
+            else
+            {
+                balance = 0;
+            }
+
+            UpdateBalanceLabels();
+        }
+
+        // Kolikonheitossa animaatio vaihtuu paikallaan olevaan kuvaan jotta animaatio ei looppaa kokoajan paikallaan
         private void ChangeImageTimer_Tick(object sender, EventArgs e)
         {
             changeImageTimer.Stop();
@@ -148,6 +227,7 @@ namespace coin_flip
             pictureBox1.Image = Properties.Resources.staticImage;
         }
 
+        // Kolikonheiton uudelleen pelaukseen tehdyt säännöt
         private void playagainBtn_Click(object sender, EventArgs e)
         {
             betPanel.Visible = true;
@@ -165,14 +245,21 @@ namespace coin_flip
             tailsBtn.Checked = false;
         }
 
+        // Asiat mitä saa ku timanttia painaa
         private void Diamond_Click(object sender, EventArgs e)
         {
             balance += 1 * diamondMultiplier;
 
             SpawnDiamond();
             UpdateBalanceLabels();
+
+            if (specialEventActive)
+            {
+                moveBomb();
+            }
         }
 
+        // Määritellää lompakko tekstit jotta joka paneelissa ne sanoo saman määrän
         private void UpdateBalanceLabels()
         {
             balanceLabel.Text = $"Lompakko: {balance} 💎";
@@ -180,6 +267,7 @@ namespace coin_flip
             balanceLabel3.Text = $"Lompakko: {balance} 💎";
         }
 
+        // Timantin spawnaamisen funktio. Spawnaa aina randomisti koko ruudun verran (ei ihan ylös koska siellä on buttonit että ei mee niitte päälle)
         private void SpawnDiamond()
         {
             int maxX = gamePanel.Width - pictureBoxDiamond.Width;
@@ -191,6 +279,8 @@ namespace coin_flip
             pictureBoxDiamond.Location = new Point(randomX, randomY);
         }
 
+
+        // Timantti paneelista buttoni joka vaihtaa kolikonheitto paneeliin
         private void panelSwitchBtn_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
@@ -210,6 +300,7 @@ namespace coin_flip
             UpdateBalanceLabels();
         }
 
+        // Kaikkien sivujen takaisin napit jotka vie takaisin timanttien keräyksee
         private void backBtn_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
@@ -232,6 +323,7 @@ namespace coin_flip
             UpdateBalanceLabels();
         }
 
+        // toinen takaisin buttoni
         private void backBtn2_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
@@ -254,6 +346,7 @@ namespace coin_flip
             UpdateBalanceLabels();
         }
 
+        // kolmas takaisin buttoni
         private void backBtn3_Click(object sender, EventArgs e)
         {
             playPanel.Visible = false;
@@ -276,14 +369,22 @@ namespace coin_flip
             UpdateBalanceLabels();
         }
 
+        // Kaupan buttonit joilla ostetaan päivityksiä
         private void btnBuyUpgrade1_Click(object sender, EventArgs e)
         {
+            if (upgrade1Purchased)
+            {
+                MessageBox.Show("Tämä päivitys on jo ostettu!");
+                return;
+            }
+
             int upgradeCost = 100;
 
             if (balance >= upgradeCost)
             {
                 balance -= upgradeCost;
                 diamondMultiplier = 2;
+                upgrade1Purchased = true;
                 UpdateBalanceLabels();
                 MessageBox.Show("Päivitys Ostettu!");
             }
@@ -293,8 +394,15 @@ namespace coin_flip
             }
         }
 
+        // Toisen kaupan buttonin funktio
         private void btnBuyUpgrade2_Click(object sender, EventArgs e)
         {
+            if (upgrade2Purchased)
+            {
+                MessageBox.Show("Tämä päivitys on jo ostettu!");
+                return;
+            }
+
             int upgradeCost = 150;
 
             if (balance >= upgradeCost)
@@ -302,6 +410,7 @@ namespace coin_flip
                 balance -= upgradeCost;
                 autoClickerEnabled = true;
                 timerAutoClicker.Start();
+                upgrade2Purchased = true;
                 UpdateBalanceLabels();
                 MessageBox.Show("Päivitys Ostettu!");
             }
@@ -311,14 +420,22 @@ namespace coin_flip
             }
         }
 
+        // ja kolmannen kaupan buttonin funktio
         private void btnBuyUpgrade3_Click(object sender, EventArgs e)
         {
+            if (upgrade3Purchased)
+            {
+                MessageBox.Show("Tämä päivitys on jo ostettu!");
+                return;
+            }
+
             int upgradeCost = 500;
 
             if (balance >= upgradeCost)
             {
                 balance -= upgradeCost;
                 goldenDiamondUpgradePurchased = true;
+                upgrade3Purchased = true;
                 UpdateBalanceLabels();
                 MessageBox.Show("Päivitys Ostettu!");
             }
@@ -328,6 +445,7 @@ namespace coin_flip
             }
         }
 
+        // Kultanen timantti päivityksen määritykset
         private void goldenDiamond_Click(object sender, EventArgs e)
         {
             int goldenDiamondValue = 20 * diamondMultiplier;
@@ -338,6 +456,28 @@ namespace coin_flip
             goldenDiamond.Visible = false;
         }
 
+        // Arpoo randomilla paikan mihin kultainen timantti spawnaa joka viides minuutti
+        private void timerGoldenDiamond_Tick(object sender, EventArgs e)
+        {
+            if (goldenDiamondUpgradePurchased)
+            {
+                Random rand = new Random();
+                int x = rand.Next(50, gamePanel.Width - 100);
+                int y = rand.Next(50, gamePanel.Height - 100);
+
+                goldenDiamond.Location = new Point(x, y);
+                goldenDiamond.Visible = true;
+            }
+        }
+
+        // Auto clickerin funktio. Antaa 100 timanttia automaattisesti joka minuutti
+        private void timerAutoClicker_Tick(object sender, EventArgs e)
+        {
+            balance += 100;
+            UpdateBalanceLabels();
+        }
+
+        // Buttoni joka vie kauppaan timantti paneelista
         private void shopBtn_Click(object sender, EventArgs e)
         {
             betPanel.Visible = false;
@@ -354,9 +494,11 @@ namespace coin_flip
             UpdateBalanceLabels();
         }
 
+        // funktiot jotka tapahtuu ku pelin aukasee
         private void Form1_Load(object sender, EventArgs e)
         {
             UpdateBalanceLabels();
+            InitializeEventTimer();
         }
     }
 }

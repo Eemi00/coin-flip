@@ -92,6 +92,7 @@
     <None Include="Resources\hexagon.png" />
     <None Include="Resources\cursor.png" />
     <None Include="Resources\golden diamond.png" />
+    <None Include="Resources\bomb.png" />
     <Content Include="Resources\staticImage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
