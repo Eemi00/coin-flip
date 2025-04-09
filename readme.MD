@@ -38,7 +38,8 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 ---
 **Pommi Tapahtuma**
 - Pommi tapahtumassa näytölle ilmestyy pommeja. Varo niiden painamista sillä sinulta lähtee timantteja.
-![Eventti]()
+  
+![Eventti](https://github.com/Eemi00/coin-flip/blob/11f4635485f5cae50a074b8eae8649d94e5605b0/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-09%20080736.png?raw=true)
 ---
 
 ### Lataus
