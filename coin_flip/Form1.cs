@@ -560,15 +560,5 @@ namespace coin_flip
                 MessageBox.Show($"Errori tiedostoon tallentamisessa: {ex.Message}");
             }
         }
-
-        private void resultLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

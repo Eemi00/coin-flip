@@ -43,8 +43,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 ---
 
 ### Lataus
-- Paina "Releases" napista sivun oikeassa laidassa. Sieltä löytyy .exe tiedosto peliin. 
-- **Muista purkaa pelin kansio jotta lompakko säilyy**
+- Paina "Releases" napista sivun oikeassa laidassa. Sieltä löytyy .exe tiedosto peliin.
 
 ### Vuokaavio
 ![Vuokaavio](https://github.com/Eemi00/coin-flip/blob/6c267443098a6d8f31423ec1b7b190d79eb8879d/kuvat/N%C3%A4ytt%C3%B6kuva%202025-04-02%20130211.png?raw=true)
