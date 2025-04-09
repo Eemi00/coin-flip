@@ -46,22 +46,29 @@
             this.selectionLabel = new System.Windows.Forms.Label();
             this.resultLabel = new System.Windows.Forms.Label();
             this.winLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gamePanel = new System.Windows.Forms.Panel();
+            this.bombEventPicture = new System.Windows.Forms.PictureBox();
+            this.goldenDiamond = new System.Windows.Forms.PictureBox();
             this.shopBtn = new System.Windows.Forms.Label();
             this.panelSwitchBtn = new System.Windows.Forms.Label();
+            this.pictureBoxDiamond = new System.Windows.Forms.PictureBox();
             this.balanceLabel = new System.Windows.Forms.Label();
             this.shopPanel = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.btnBuyUpgrade2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnBuyUpgrade3 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnBuyUpgrade1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -71,27 +78,20 @@
             this.timerAutoClicker = new System.Windows.Forms.Timer(this.components);
             this.timerGoldenDiamond = new System.Windows.Forms.Timer(this.components);
             this.eventTimer = new System.Windows.Forms.Timer(this.components);
-            this.bombEventPicture = new System.Windows.Forms.PictureBox();
-            this.goldenDiamond = new System.Windows.Forms.PictureBox();
-            this.pictureBoxDiamond = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.betPanel.SuspendLayout();
             this.playPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gamePanel.SuspendLayout();
-            this.shopPanel.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bombEventPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.goldenDiamond)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiamond)).BeginInit();
+            this.shopPanel.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // betPanel
@@ -297,6 +297,16 @@
             this.winLabel.Size = new System.Drawing.Size(0, 29);
             this.winLabel.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(416, 26);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(687, 556);
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // gamePanel
             // 
             this.gamePanel.Controls.Add(this.bombEventPicture);
@@ -310,6 +320,32 @@
             this.gamePanel.Name = "gamePanel";
             this.gamePanel.Size = new System.Drawing.Size(1508, 858);
             this.gamePanel.TabIndex = 5;
+            // 
+            // bombEventPicture
+            // 
+            this.bombEventPicture.Image = global::coin_flip.Properties.Resources.bomb;
+            this.bombEventPicture.Location = new System.Drawing.Point(1427, 182);
+            this.bombEventPicture.Margin = new System.Windows.Forms.Padding(4);
+            this.bombEventPicture.Name = "bombEventPicture";
+            this.bombEventPicture.Size = new System.Drawing.Size(81, 81);
+            this.bombEventPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.bombEventPicture.TabIndex = 5;
+            this.bombEventPicture.TabStop = false;
+            this.bombEventPicture.Visible = false;
+            this.bombEventPicture.Click += new System.EventHandler(this.bombEventPicture_Click);
+            // 
+            // goldenDiamond
+            // 
+            this.goldenDiamond.Image = global::coin_flip.Properties.Resources.golden_diamond;
+            this.goldenDiamond.Location = new System.Drawing.Point(1401, 91);
+            this.goldenDiamond.Margin = new System.Windows.Forms.Padding(4);
+            this.goldenDiamond.Name = "goldenDiamond";
+            this.goldenDiamond.Size = new System.Drawing.Size(107, 92);
+            this.goldenDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.goldenDiamond.TabIndex = 4;
+            this.goldenDiamond.TabStop = false;
+            this.goldenDiamond.Visible = false;
+            this.goldenDiamond.Click += new System.EventHandler(this.goldenDiamond_Click);
             // 
             // shopBtn
             // 
@@ -338,6 +374,17 @@
             this.panelSwitchBtn.TabIndex = 2;
             this.panelSwitchBtn.Text = "Heitä kolikkoa!";
             this.panelSwitchBtn.Click += new System.EventHandler(this.panelSwitchBtn_Click);
+            // 
+            // pictureBoxDiamond
+            // 
+            this.pictureBoxDiamond.Image = global::coin_flip.Properties.Resources.diamond;
+            this.pictureBoxDiamond.Location = new System.Drawing.Point(1401, 0);
+            this.pictureBoxDiamond.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxDiamond.Name = "pictureBoxDiamond";
+            this.pictureBoxDiamond.Size = new System.Drawing.Size(107, 92);
+            this.pictureBoxDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxDiamond.TabIndex = 1;
+            this.pictureBoxDiamond.TabStop = false;
             // 
             // balanceLabel
             // 
@@ -378,6 +425,16 @@
             this.groupBox2.Size = new System.Drawing.Size(340, 391);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::coin_flip.Properties.Resources.cursor;
+            this.pictureBox3.Location = new System.Drawing.Point(104, 53);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(126, 164);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
             // 
             // label6
             // 
@@ -437,6 +494,16 @@
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::coin_flip.Properties.Resources.golden_diamond;
+            this.pictureBox4.Location = new System.Drawing.Point(74, 53);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(188, 173);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -494,6 +561,16 @@
             this.groupBox1.Size = new System.Drawing.Size(340, 391);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::coin_flip.Properties.Resources.diamond;
+            this.pictureBox2.Location = new System.Drawing.Point(74, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(188, 173);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
             // 
             // label5
             // 
@@ -584,83 +661,6 @@
             this.eventTimer.Enabled = true;
             this.eventTimer.Interval = 600000;
             // 
-            // bombEventPicture
-            // 
-            this.bombEventPicture.Image = global::coin_flip.Properties.Resources.bomb;
-            this.bombEventPicture.Location = new System.Drawing.Point(1427, 182);
-            this.bombEventPicture.Margin = new System.Windows.Forms.Padding(4);
-            this.bombEventPicture.Name = "bombEventPicture";
-            this.bombEventPicture.Size = new System.Drawing.Size(81, 81);
-            this.bombEventPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.bombEventPicture.TabIndex = 5;
-            this.bombEventPicture.TabStop = false;
-            this.bombEventPicture.Visible = false;
-            this.bombEventPicture.Click += new System.EventHandler(this.bombEventPicture_Click);
-            // 
-            // goldenDiamond
-            // 
-            this.goldenDiamond.Image = global::coin_flip.Properties.Resources.golden_diamond;
-            this.goldenDiamond.Location = new System.Drawing.Point(1401, 91);
-            this.goldenDiamond.Margin = new System.Windows.Forms.Padding(4);
-            this.goldenDiamond.Name = "goldenDiamond";
-            this.goldenDiamond.Size = new System.Drawing.Size(107, 92);
-            this.goldenDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.goldenDiamond.TabIndex = 4;
-            this.goldenDiamond.TabStop = false;
-            this.goldenDiamond.Visible = false;
-            this.goldenDiamond.Click += new System.EventHandler(this.goldenDiamond_Click);
-            // 
-            // pictureBoxDiamond
-            // 
-            this.pictureBoxDiamond.Image = global::coin_flip.Properties.Resources.diamond;
-            this.pictureBoxDiamond.Location = new System.Drawing.Point(1401, 0);
-            this.pictureBoxDiamond.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxDiamond.Name = "pictureBoxDiamond";
-            this.pictureBoxDiamond.Size = new System.Drawing.Size(107, 92);
-            this.pictureBoxDiamond.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDiamond.TabIndex = 1;
-            this.pictureBoxDiamond.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::coin_flip.Properties.Resources.cursor;
-            this.pictureBox3.Location = new System.Drawing.Point(104, 53);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(126, 164);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::coin_flip.Properties.Resources.golden_diamond;
-            this.pictureBox4.Location = new System.Drawing.Point(74, 53);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(188, 173);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::coin_flip.Properties.Resources.diamond;
-            this.pictureBox2.Location = new System.Drawing.Point(74, 53);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(188, 173);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(416, 26);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(687, 556);
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -682,23 +682,23 @@
             this.betPanel.PerformLayout();
             this.playPanel.ResumeLayout(false);
             this.playPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gamePanel.ResumeLayout(false);
             this.gamePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bombEventPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.goldenDiamond)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiamond)).EndInit();
             this.shopPanel.ResumeLayout(false);
             this.shopPanel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bombEventPicture)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.goldenDiamond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiamond)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

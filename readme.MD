@@ -38,6 +38,7 @@ Tulevaisuudessa peliin tulee uusia päivityksiä jotka saavat pelaajien mielenki
 ---
 **Pommi Tapahtuma**
 - Pommi tapahtumassa näytölle ilmestyy pommeja. Varo niiden painamista sillä sinulta lähtee timantteja.
+![Eventti]()
 ---
 
 ### Lataus
