@@ -52,7 +52,7 @@ namespace coin_flip
             timerAutoClicker.Interval = 60000;
             timerAutoClicker.Tick += timerAutoClicker_Tick;
 
-            timerGoldenDiamond.Interval = 300000; 
+            timerGoldenDiamond.Interval = 120000; 
             timerGoldenDiamond.Tick += timerGoldenDiamond_Tick;
         }
 
@@ -199,9 +199,13 @@ namespace coin_flip
         {
             if (!specialEventActive) return;
 
-            Random rand = new Random();
-            int x = rand.Next(50, gamePanel.Width - bombEventPicture.Width);
-            int y = rand.Next(50, gamePanel.Height - bombEventPicture.Height);
+            bombEventPicture.Size = new Size(70, 70);
+
+            int maxX = gamePanel.Width - bombEventPicture.Width;
+            int maxY = gamePanel.Height - bombEventPicture.Height;
+
+            int x = BalanceRandom.Next(0, Math.Max(1, maxX));
+            int y = BalanceRandom.Next(50, Math.Max(51, maxY));
 
             bombEventPicture.Location = new Point(x, y);
             bombEventPicture.Visible = true;
@@ -276,6 +280,7 @@ namespace coin_flip
         // Timantin spawnaamisen funktio. Spawnaa aina randomisti koko ruudun verran (ei ihan ylös koska siellä on buttonit että ei mee niitte päälle)
         private void SpawnDiamond()
         {
+            pictureBoxDiamond.Size = new Size(80, 70);
             int maxX = gamePanel.Width - pictureBoxDiamond.Width;
             int maxY = gamePanel.Height - pictureBoxDiamond.Height;
 
@@ -409,7 +414,7 @@ namespace coin_flip
                 return;
             }
 
-            int upgradeCost = 150;
+            int upgradeCost = 350;
 
             if (balance >= upgradeCost)
             {
@@ -454,7 +459,7 @@ namespace coin_flip
         // Kultanen timantti päivityksen määritykset
         private void goldenDiamond_Click(object sender, EventArgs e)
         {
-            int goldenDiamondValue = 20 * diamondMultiplier;
+            int goldenDiamondValue = 150 * diamondMultiplier;
 
             balance += goldenDiamondValue;
             UpdateBalanceLabels();
@@ -462,7 +467,7 @@ namespace coin_flip
             goldenDiamond.Visible = false;
         }
 
-        // Arpoo randomilla paikan mihin kultainen timantti spawnaa joka viides minuutti
+        // Arpoo randomilla paikan mihin kultainen timantti spawnaa kahden minuutin välein
         private void timerGoldenDiamond_Tick(object sender, EventArgs e)
         {
             if (goldenDiamondUpgradePurchased)
@@ -554,6 +559,16 @@ namespace coin_flip
             {
                 MessageBox.Show($"Errori tiedostoon tallentamisessa: {ex.Message}");
             }
+        }
+
+        private void resultLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

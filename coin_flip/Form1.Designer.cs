@@ -105,10 +105,11 @@
             this.betPanel.Controls.Add(this.headsBtn);
             this.betPanel.Controls.Add(this.startBtn);
             this.betPanel.Controls.Add(this.label1);
+            this.betPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.betPanel.Location = new System.Drawing.Point(0, 0);
             this.betPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.betPanel.Name = "betPanel";
-            this.betPanel.Size = new System.Drawing.Size(1508, 862);
+            this.betPanel.Size = new System.Drawing.Size(2400, 1283);
             this.betPanel.TabIndex = 0;
             // 
             // label2
@@ -117,7 +118,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("UniSansBold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(613, 418);
+            this.label2.Location = new System.Drawing.Point(836, 429);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 36);
             this.label2.TabIndex = 12;
@@ -125,7 +126,7 @@
             // 
             // betAmount
             // 
-            this.betAmount.Location = new System.Drawing.Point(681, 458);
+            this.betAmount.Location = new System.Drawing.Point(904, 469);
             this.betAmount.Margin = new System.Windows.Forms.Padding(4);
             this.betAmount.Name = "betAmount";
             this.betAmount.Size = new System.Drawing.Size(125, 22);
@@ -152,7 +153,7 @@
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.backBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.Color.White;
-            this.backBtn.Location = new System.Drawing.Point(681, 615);
+            this.backBtn.Location = new System.Drawing.Point(904, 626);
             this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(127, 39);
@@ -166,7 +167,7 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.errorLabel.Location = new System.Drawing.Point(587, 688);
+            this.errorLabel.Location = new System.Drawing.Point(810, 699);
             this.errorLabel.Name = "errorLabel";
             this.errorLabel.Size = new System.Drawing.Size(0, 25);
             this.errorLabel.TabIndex = 8;
@@ -176,7 +177,7 @@
             this.tailsBtn.AutoSize = true;
             this.tailsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tailsBtn.ForeColor = System.Drawing.Color.White;
-            this.tailsBtn.Location = new System.Drawing.Point(813, 321);
+            this.tailsBtn.Location = new System.Drawing.Point(1036, 332);
             this.tailsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tailsBtn.Name = "tailsBtn";
             this.tailsBtn.Size = new System.Drawing.Size(129, 36);
@@ -190,7 +191,7 @@
             this.headsBtn.AutoSize = true;
             this.headsBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headsBtn.ForeColor = System.Drawing.Color.White;
-            this.headsBtn.Location = new System.Drawing.Point(549, 321);
+            this.headsBtn.Location = new System.Drawing.Point(772, 332);
             this.headsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.headsBtn.Name = "headsBtn";
             this.headsBtn.Size = new System.Drawing.Size(133, 36);
@@ -207,7 +208,7 @@
             this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.startBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startBtn.ForeColor = System.Drawing.Color.White;
-            this.startBtn.Location = new System.Drawing.Point(681, 549);
+            this.startBtn.Location = new System.Drawing.Point(904, 560);
             this.startBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.startBtn.Name = "startBtn";
             this.startBtn.Size = new System.Drawing.Size(127, 39);
@@ -222,7 +223,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("UniSansBold", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(541, 198);
+            this.label1.Location = new System.Drawing.Point(764, 209);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(400, 45);
             this.label1.TabIndex = 0;
@@ -236,17 +237,19 @@
             this.playPanel.Controls.Add(this.resultLabel);
             this.playPanel.Controls.Add(this.winLabel);
             this.playPanel.Controls.Add(this.pictureBox1);
+            this.playPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.playPanel.Location = new System.Drawing.Point(0, 0);
             this.playPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.playPanel.Name = "playPanel";
-            this.playPanel.Size = new System.Drawing.Size(1885, 1076);
+            this.playPanel.Size = new System.Drawing.Size(2400, 1283);
             this.playPanel.TabIndex = 9;
             this.playPanel.Visible = false;
+            this.playPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.playPanel_Paint);
             // 
             // backBtn2
             // 
             this.backBtn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn2.Location = new System.Drawing.Point(619, 761);
+            this.backBtn2.Location = new System.Drawing.Point(831, 876);
             this.backBtn2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn2.Name = "backBtn2";
             this.backBtn2.Size = new System.Drawing.Size(212, 34);
@@ -258,7 +261,7 @@
             // playagainBtn
             // 
             this.playagainBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.playagainBtn.Location = new System.Drawing.Point(619, 704);
+            this.playagainBtn.Location = new System.Drawing.Point(831, 819);
             this.playagainBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.playagainBtn.Name = "playagainBtn";
             this.playagainBtn.Size = new System.Drawing.Size(212, 34);
@@ -272,9 +275,9 @@
             this.selectionLabel.AutoSize = true;
             this.selectionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectionLabel.ForeColor = System.Drawing.Color.White;
-            this.selectionLabel.Location = new System.Drawing.Point(636, 117);
+            this.selectionLabel.Location = new System.Drawing.Point(848, 232);
             this.selectionLabel.Name = "selectionLabel";
-            this.selectionLabel.Size = new System.Drawing.Size(0, 29);
+            this.selectionLabel.Size = new System.Drawing.Size(0, 36);
             this.selectionLabel.TabIndex = 0;
             // 
             // resultLabel
@@ -282,25 +285,26 @@
             this.resultLabel.AutoSize = true;
             this.resultLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.resultLabel.ForeColor = System.Drawing.Color.White;
-            this.resultLabel.Location = new System.Drawing.Point(636, 592);
+            this.resultLabel.Location = new System.Drawing.Point(887, 699);
             this.resultLabel.Name = "resultLabel";
             this.resultLabel.Size = new System.Drawing.Size(0, 29);
             this.resultLabel.TabIndex = 3;
+            this.resultLabel.Click += new System.EventHandler(this.resultLabel_Click);
             // 
             // winLabel
             // 
             this.winLabel.AutoSize = true;
             this.winLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.winLabel.ForeColor = System.Drawing.Color.White;
-            this.winLabel.Location = new System.Drawing.Point(578, 647);
+            this.winLabel.Location = new System.Drawing.Point(810, 756);
             this.winLabel.Name = "winLabel";
-            this.winLabel.Size = new System.Drawing.Size(0, 29);
+            this.winLabel.Size = new System.Drawing.Size(0, 36);
             this.winLabel.TabIndex = 4;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(416, 26);
+            this.pictureBox1.Location = new System.Drawing.Point(628, 141);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(687, 556);
@@ -315,16 +319,17 @@
             this.gamePanel.Controls.Add(this.panelSwitchBtn);
             this.gamePanel.Controls.Add(this.pictureBoxDiamond);
             this.gamePanel.Controls.Add(this.balanceLabel);
+            this.gamePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gamePanel.Location = new System.Drawing.Point(0, 0);
             this.gamePanel.Margin = new System.Windows.Forms.Padding(4);
             this.gamePanel.Name = "gamePanel";
-            this.gamePanel.Size = new System.Drawing.Size(1508, 858);
+            this.gamePanel.Size = new System.Drawing.Size(2400, 1283);
             this.gamePanel.TabIndex = 5;
             // 
             // bombEventPicture
             // 
             this.bombEventPicture.Image = global::coin_flip.Properties.Resources.bomb;
-            this.bombEventPicture.Location = new System.Drawing.Point(1427, 182);
+            this.bombEventPicture.Location = new System.Drawing.Point(1843, 178);
             this.bombEventPicture.Margin = new System.Windows.Forms.Padding(4);
             this.bombEventPicture.Name = "bombEventPicture";
             this.bombEventPicture.Size = new System.Drawing.Size(81, 81);
@@ -337,7 +342,7 @@
             // goldenDiamond
             // 
             this.goldenDiamond.Image = global::coin_flip.Properties.Resources.golden_diamond;
-            this.goldenDiamond.Location = new System.Drawing.Point(1401, 91);
+            this.goldenDiamond.Location = new System.Drawing.Point(1817, 91);
             this.goldenDiamond.Margin = new System.Windows.Forms.Padding(4);
             this.goldenDiamond.Name = "goldenDiamond";
             this.goldenDiamond.Size = new System.Drawing.Size(107, 92);
@@ -353,7 +358,7 @@
             this.shopBtn.BackColor = System.Drawing.Color.White;
             this.shopBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shopBtn.ForeColor = System.Drawing.Color.Black;
-            this.shopBtn.Location = new System.Drawing.Point(1358, 34);
+            this.shopBtn.Location = new System.Drawing.Point(1745, 34);
             this.shopBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.shopBtn.Name = "shopBtn";
             this.shopBtn.Size = new System.Drawing.Size(136, 29);
@@ -367,7 +372,7 @@
             this.panelSwitchBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panelSwitchBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelSwitchBtn.ForeColor = System.Drawing.Color.Black;
-            this.panelSwitchBtn.Location = new System.Drawing.Point(636, 34);
+            this.panelSwitchBtn.Location = new System.Drawing.Point(855, 34);
             this.panelSwitchBtn.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.panelSwitchBtn.Name = "panelSwitchBtn";
             this.panelSwitchBtn.Size = new System.Drawing.Size(185, 29);
@@ -378,7 +383,7 @@
             // pictureBoxDiamond
             // 
             this.pictureBoxDiamond.Image = global::coin_flip.Properties.Resources.diamond;
-            this.pictureBoxDiamond.Location = new System.Drawing.Point(1401, 0);
+            this.pictureBoxDiamond.Location = new System.Drawing.Point(1817, 0);
             this.pictureBoxDiamond.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxDiamond.Name = "pictureBoxDiamond";
             this.pictureBoxDiamond.Size = new System.Drawing.Size(107, 92);
@@ -407,10 +412,11 @@
             this.shopPanel.Controls.Add(this.groupBox1);
             this.shopPanel.Controls.Add(this.backBtn3);
             this.shopPanel.Controls.Add(this.balanceLabel3);
+            this.shopPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.shopPanel.Location = new System.Drawing.Point(0, 0);
             this.shopPanel.Margin = new System.Windows.Forms.Padding(4);
             this.shopPanel.Name = "shopPanel";
-            this.shopPanel.Size = new System.Drawing.Size(1508, 858);
+            this.shopPanel.Size = new System.Drawing.Size(2400, 1283);
             this.shopPanel.TabIndex = 6;
             // 
             // groupBox2
@@ -420,9 +426,9 @@
             this.groupBox2.Controls.Add(this.btnBuyUpgrade2);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(592, 198);
+            this.groupBox2.Location = new System.Drawing.Point(674, 153);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(340, 391);
+            this.groupBox2.Size = new System.Drawing.Size(272, 313);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             // 
@@ -468,7 +474,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(186, 25);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Hinta: 150 Timanttia";
+            this.label7.Text = "Hinta: 350 Timanttia";
             // 
             // label8
             // 
@@ -488,9 +494,9 @@
             this.groupBox3.Controls.Add(this.btnBuyUpgrade3);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(1047, 197);
+            this.groupBox3.Location = new System.Drawing.Point(1017, 153);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(340, 391);
+            this.groupBox3.Size = new System.Drawing.Size(272, 313);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             // 
@@ -556,9 +562,9 @@
             this.groupBox1.Controls.Add(this.btnBuyUpgrade1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(135, 198);
+            this.groupBox1.Location = new System.Drawing.Point(333, 158);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(340, 391);
+            this.groupBox1.Size = new System.Drawing.Size(272, 313);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             // 
@@ -625,10 +631,10 @@
             this.backBtn3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.backBtn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn3.ForeColor = System.Drawing.Color.White;
-            this.backBtn3.Location = new System.Drawing.Point(672, 29);
+            this.backBtn3.Location = new System.Drawing.Point(757, 27);
             this.backBtn3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn3.Name = "backBtn3";
-            this.backBtn3.Size = new System.Drawing.Size(127, 39);
+            this.backBtn3.Size = new System.Drawing.Size(102, 31);
             this.backBtn3.TabIndex = 10;
             this.backBtn3.Text = "Poistu";
             this.backBtn3.UseVisualStyleBackColor = false;
@@ -640,10 +646,10 @@
             this.balanceLabel3.BackColor = System.Drawing.Color.White;
             this.balanceLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.balanceLabel3.ForeColor = System.Drawing.Color.Black;
-            this.balanceLabel3.Location = new System.Drawing.Point(28, 34);
+            this.balanceLabel3.Location = new System.Drawing.Point(35, 43);
             this.balanceLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.balanceLabel3.Name = "balanceLabel3";
-            this.balanceLabel3.Size = new System.Drawing.Size(195, 29);
+            this.balanceLabel3.Size = new System.Drawing.Size(244, 36);
             this.balanceLabel3.TabIndex = 1;
             this.balanceLabel3.Text = "Lompakko: 0 💎";
             // 
@@ -666,15 +672,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1504, 811);
+            this.ClientSize = new System.Drawing.Size(1920, 1026);
+            this.Controls.Add(this.playPanel);
+            this.Controls.Add(this.betPanel);
             this.Controls.Add(this.gamePanel);
             this.Controls.Add(this.shopPanel);
-            this.Controls.Add(this.betPanel);
-            this.Controls.Add(this.playPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timanttipeli";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
